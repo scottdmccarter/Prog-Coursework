@@ -11,24 +11,11 @@ class Particle{
     this.offscreen;
   }
 
-  setRed(red){
-    	this.red = (red);
-        }
-
-  setGreen(green){
-    	this.green = (green);
-        }
-
-  setBlue(blue){
-    	this.blue = (blue);
-        }
 
 draw(){
-
     noStroke();
     fill(this.bright*this.red/255, this.bright*this.green/255, this.bright*this.blue/255,150);
 		ellipse(this.x_pos, this.y_pos, 50, 50);
-    // blendMode(ADD);
 }
 move(){
     this.x_pos += this.dx;
@@ -40,12 +27,6 @@ move(){
 					(this.y_pos < 0) ||
 					(this.y_pos > windowHeight) ){
             this.offscreen = true
-		// 	this.x_pos=windowWidth/2;
-		// 	this.y_pos=windowHeight/2;
-    //   this.dx = random(-5, 5);
-    //   this.dy = random(-5, 5);
-    //   this.bright= random(255);
-    //   fill(this.bright*this.red, this.bright*this.green, this.bright*this.blue,150);
-  	 }
-    }
+	  }
+}
 }
