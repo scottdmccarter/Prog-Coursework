@@ -11,6 +11,17 @@ class Particle{
     this.offscreen;
   }
 
+  setRed(red){
+    	this.red = (red);
+        }
+
+  setGreen(green){
+    	this.green = (green);
+        }
+
+  setBlue(blue){
+    	this.blue = (blue);
+        }
 
 draw(){
     noStroke();
@@ -28,5 +39,4 @@ move(){
 					(this.y_pos > windowHeight) ){
             this.offscreen = true
 	  }
-}
 }

@@ -1,30 +1,33 @@
-let component
-let Rslider = document.getElementById("Red");
+let component;
+let rSlider = document.getElementById("Red");
 let Routput = document.getElementById("RedD");
-let Gslider = document.getElementById("Green");
+let gSlider = document.getElementById("Green");
 let Goutput = document.getElementById("GreenD");
-let Bslider = document.getElementById("Blue");
+let bSlider = document.getElementById("Blue");
 let Boutput = document.getElementById("BlueD");
 
-Routput.innerHTML = Rslider.value;
-Rslider.oninput = function() {
-Routput.innerHTML = this.value;
-}
+let vRed = rSlider.value;
+let vGreen = gSlider.value;
+let vBlue = bSlider.value;
 
-Goutput.innerHTML = Gslider.value;
-Gslider.oninput = function() {
-Goutput.innerHTML = this.value;
-}
+Routput.innerHTML = rSlider.value;
+rSlider.oninput = function() {
+	Routput.innerHTML = this.value;
+};
 
-Boutput.innerHTML = Bslider.value;
-Bslider.oninput = function() {
-Boutput.innerHTML = this.value;
-}
+Goutput.innerHTML = gSlider.value;
+gSlider.oninput = function() {
+	Goutput.innerHTML = this.value;
+};
 
+Boutput.innerHTML = bSlider.value;
+bSlider.oninput = function() {
+	Boutput.innerHTML = this.value;
+};
 function setup(){
-  component = new Component(document.getElementById("Red").value,document.getElementById("Green").value,document.getElementById("Blue").value);
-  component.init();
+	component = new Component(true);
+	component.init();
 }
 function draw(){
-  component.draw()
+	component.draw();
 }
