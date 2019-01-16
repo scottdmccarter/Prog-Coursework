@@ -1,42 +1,48 @@
+
 let particles=[]
-let particleA
-let particleB
-var Rslider = document.getElementById("red");
-var Routput = document.getElementById("redD");
-var Gslider = document.getElementById("green");
-var Goutput = document.getElementById("greenD");
-var Bslider = document.getElementById("blue");
-var Boutput = document.getElementById("blueD");
+var Rslider = document.getElementById("Red");
+var Routput = document.getElementById("RedD");
+var Gslider = document.getElementById("Green");
+var Goutput = document.getElementById("GreenD");
+var Bslider = document.getElementById("Blue");
+var Boutput = document.getElementById("BlueD");
 
 Routput.innerHTML = Rslider.value;
 Rslider.oninput = function() {
-  Routput.innerHTML = this.value;
+Routput.innerHTML = this.value;
 }
 
 Goutput.innerHTML = Gslider.value;
 Gslider.oninput = function() {
-  Goutput.innerHTML = this.value;
+Goutput.innerHTML = this.value;
 }
 
 Boutput.innerHTML = Bslider.value;
 Bslider.oninput = function() {
-  Boutput.innerHTML = this.value;
+Boutput.innerHTML = this.value;
 }
 
 function setup(){
   createCanvas(windowWidth, windowHeight);
-
-  for (let i=0; i<100; i++){
-    particles[i] = new Particle(windowWidth/2,windowHeight/2,document.getElementById("red").value,document.getElementById("green").value,document.getElementById("blue").value);
+  frameRate(120);
+    for (let i=0; i<500; i++){
+    particles[i] = new Particle(windowWidth/2,windowHeight/2, document.getElementById("Red").value, document.getElementById("Green").value, document.getElementById("Blue").value);
   }
-  blendMode();
+  blendMode(ADD);
+
 }
-
-
 function draw(){
-
-  for (let k of particles) {
-  k.draw();
-  k.move();
-  }
+  clear()
+  background(0);
+  for (let i=0; i< particles.length; i++){
+  particles[i].draw();
+  particles[i].move();
+  if(particles[i].offscreen){particles.splice(i,1)}
+  if (particles.length < 500){
+    for (let j=particles.length; j<500; j++){
+  particles[j] = new Particle(windowWidth/2,windowHeight/2, document.getElementById("Red").value, document.getElementById("Green").value, document.getElementById("Blue").value);
+  particles[j].move();
+              }
+          }
+        }
 }

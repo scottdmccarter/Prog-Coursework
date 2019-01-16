@@ -7,30 +7,45 @@ class Particle{
     this.red = red;
     this.green = green;
     this.blue = blue;
-    this.bright= random(0,.5);
+    this.bright= random(255);
+    this.offscreen;
   }
 
+  setRed(red){
+    	this.red = (red);
+        }
+
+  setGreen(green){
+    	this.green = (green);
+        }
+
+  setBlue(blue){
+    	this.blue = (blue);
+        }
+
 draw(){
+
     noStroke();
-		fill(this.bright*this.red, this.bright*this.green, this.bright*this.blue,150);
+    fill(this.bright*this.red/255, this.bright*this.green/255, this.bright*this.blue/255,150);
 		ellipse(this.x_pos, this.y_pos, 50, 50);
+    // blendMode(ADD);
 }
 move(){
-      this.x_pos += this.dx;
+    this.x_pos += this.dx;
 		this.y_pos += this.dy;
-		// this.bright--;
+		this.bright--;
 		if (	(this.bright <= 0) ||
 					(this.x_pos < 0) ||
 					(this.x_pos > windowWidth) ||
 					(this.y_pos < 0) ||
-					(this.y_pos > windowHeight) )
-			{
-			this.x_pos=windowWidth/2;
-			this.y_pos=windowHeight/2;
-      this.dx = random(-5, 5);
-      this.dy = random(-5, 5);
-			this.bright = random(0,1);
-      fill(this.bright*this.red, this.bright*this.green, this.bright*this.blue,150);
+					(this.y_pos > windowHeight) ){
+            this.offscreen = true
+		// 	this.x_pos=windowWidth/2;
+		// 	this.y_pos=windowHeight/2;
+    //   this.dx = random(-5, 5);
+    //   this.dy = random(-5, 5);
+    //   this.bright= random(255);
+    //   fill(this.bright*this.red, this.bright*this.green, this.bright*this.blue,150);
   	 }
     }
-  }
+}
