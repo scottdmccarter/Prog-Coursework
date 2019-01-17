@@ -1,5 +1,11 @@
-# Programming Coursework 1
+# Particles()
+###Example
+## Methods and Parameters
+Description of
+###Description
+###Fields
 
+###Methods
 
 
 
