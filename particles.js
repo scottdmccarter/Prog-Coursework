@@ -1,4 +1,4 @@
-let g
+let g;
 class Particles{
 
 	constructor(width,height,noParticles,graphic){
@@ -9,17 +9,17 @@ class Particles{
 		this.graphic=graphic;
 	}
 
-//initialises component on canvas of size width x height, if graphic=true the component is rendered onto an WEBGL cube instead
+	//initialises component on canvas of size width x height, if graphic=true the component is rendered onto an WEBGL cube instead
 	init(){
 		if(this.graphic){
 			createCanvas(this.width,this.height,WEBGL);
 			g = createGraphics(300,300);
 			g.background(0);}
-			else{
-				createCanvas(this.width,this.height);
-				//the blendmode() function does not exist for WEBGL, so the appearance of the effect is slightly different
-				blendMode(ADD);
-			}
+		else{
+			createCanvas(this.width,this.height);
+			//the blendmode() function does not exist for WEBGL, so the appearance of the effect is slightly different
+			blendMode(ADD);
+		}
 
 		frameRate(60);
 		//generates particles from the Particle class - the number is determined by the noParticles parameter
@@ -29,7 +29,7 @@ class Particles{
 
 	}
 
-//draws Particles
+	//draws Particles
 	draw(){
 		clear();
 		background(0);
@@ -48,16 +48,16 @@ class Particles{
 			}
 		}
 
-//renders Particles on rotating cube if graphic=true
-if(this.graphic){
-		texture(g);
-		rotateZ(frameCount * 0.02);
-	  rotateX(frameCount * 0.02);
-	  rotateY(frameCount * 0.02);
-		box(this.width/2);
+		//renders Particles on rotating cube if graphic=true
+		if(this.graphic){
+			texture(g);
+			rotateZ(frameCount * 0.02);
+			rotateX(frameCount * 0.02);
+			rotateY(frameCount * 0.02);
+			box(this.width/2);
 
+		}
 	}
-}
 }
 
 ///////////////////////////////////////////////////////////////
@@ -79,18 +79,18 @@ class Particle{
 		this.graphic = graphic;
 	}
 
-//draws particle at defined location, onto cube if graphic=true
+	//draws particle at defined location, onto cube if graphic=true
 	draw(){
 		if(this.graphic){
-		g.noStroke();
-		g.fill(this.bright*this.red/255, this.bright*this.green/255, this.bright*this.blue/255,150);
-		g.ellipse(this.x_pos/2, this.y_pos/2, 50, 50);
-}
-else{
-		noStroke();
-		fill(this.bright*this.red/255, this.bright*this.green/255, this.bright*this.blue/255,150);
-		ellipse(this.x_pos, this.y_pos, 50, 50);
-	}
+			g.noStroke();
+			g.fill(this.bright*this.red/255, this.bright*this.green/255, this.bright*this.blue/255,150);
+			g.ellipse(this.x_pos/2, this.y_pos/2, 50, 50);
+		}
+		else{
+			noStroke();
+			fill(this.bright*this.red/255, this.bright*this.green/255, this.bright*this.blue/255,150);
+			ellipse(this.x_pos, this.y_pos, 50, 50);
+		}
 	}
 
 	move(){
