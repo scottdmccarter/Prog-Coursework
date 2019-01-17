@@ -4,6 +4,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>
   </head>
   <body>
+    <!-- Creating html sliders for RGB customisation -->
     <form id = "settings">
       <div class="slidecontainer">
         <input type="range" min="0" max="255" value="127" class="slider" id="Red">  Red: <span id="RedD"></span>
@@ -12,6 +13,7 @@
         <br/>
         <input type="range" min="0" max="255" value="255" class="slider" id="Blue"> Blue: <span id="BlueD"></span>
         <br/>
+        <!-- buttons to reset colour to default, and to refresh whole page -->
         <button type="reset" value="Reset">Default Colour</button>
         <button value="Refresh Page" onClick="window.location.reload()">Reset</button>
       </div>

@@ -1,4 +1,5 @@
 let component;
+//links html rgb sliders to js
 let rSlider = document.getElementById("Red");
 let Routput = document.getElementById("RedD");
 let gSlider = document.getElementById("Green");
@@ -10,6 +11,7 @@ let vRed = rSlider.value;
 let vGreen = gSlider.value;
 let vBlue = bSlider.value;
 
+//performs live updates of r,g,b slider values
 Routput.innerHTML = rSlider.value;
 rSlider.oninput = function() {
 	Routput.innerHTML = this.value;
@@ -24,10 +26,14 @@ Boutput.innerHTML = bSlider.value;
 bSlider.oninput = function() {
 	Boutput.innerHTML = this.value;
 };
+
+//calls Particles class, intiialising it
 function setup(){
-	component = new Particles(500,500,500,false);
-	component.init();
+	particles = new Particles(500,500,500,false);
+	particles.init();
 }
+
+// draws particle effect
 function draw(){
-	component.draw();
+	particles.draw();
 }
