@@ -1,10 +1,10 @@
 let g
 class Particles{
-	constructor(graphic){
+	constructor(width,height,noParticles,graphic){
 		this.particles=[];
-		this.noParticles = 500;
-		this.width = 500;
-		this.height = 500;
+		this.noParticles = noParticles || 500;
+		this.width = width || 500;
+		this.height = height || 500;
 		this.graphic=graphic;
 	}
 
