@@ -25,7 +25,7 @@ bSlider.oninput = function() {
 	Boutput.innerHTML = this.value;
 };
 function setup(){
-	component = new Component(true);
+	component = new Particles();
 	component.init();
 }
 function draw(){
