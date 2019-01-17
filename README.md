@@ -48,9 +48,7 @@ function draw(){
 	component.draw();
 }
 ```
-<img src="images/example.PNG" alt="example image" width="300"/>
-
-
+<img src="example.png" alt="example image" width="300"/>
 
 
 ## Original Code
