@@ -1,4 +1,3 @@
-let component;
 //links html rgb sliders to js
 let rSlider = document.getElementById("Red");
 let Routput = document.getElementById("RedD");
@@ -6,10 +5,6 @@ let gSlider = document.getElementById("Green");
 let Goutput = document.getElementById("GreenD");
 let bSlider = document.getElementById("Blue");
 let Boutput = document.getElementById("BlueD");
-
-let vRed = rSlider.value;
-let vGreen = gSlider.value;
-let vBlue = bSlider.value;
 
 //performs live updates of r,g,b slider values
 Routput.innerHTML = rSlider.value;

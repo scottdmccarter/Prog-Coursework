@@ -1,12 +1,14 @@
-let g;
 class Particles{
 
-	constructor(width,height,noParticles,graphic){
+	constructor(width,height,noParticles,graphic,red,green,blue){
 		this.particles=[];
 		this.noParticles = noParticles || 500;
 		this.width = width || 500;
 		this.height = height || 500;
-		this.graphic=graphic;
+		this.graphic = graphic;
+		this.red = red;
+		this.green = green;
+		this.blue = blue;
 	}
 
 	//initialises component on canvas of size width x height, if graphic=true the component is rendered onto an WEBGL cube instead
@@ -24,7 +26,7 @@ class Particles{
 		frameRate(60);
 		//generates particles from the Particle class - the number is determined by the noParticles parameter
 		for (let i=0; i<this.noParticles; i++){
-			this.particles[i] = new Particle(this.width/2,this.height/2,this.graphic);
+			this.particles[i] = new Particle(this.width/2,this.height/2,this.graphic,this.red,this.green,this.blue);
 		}
 
 	}
@@ -42,7 +44,7 @@ class Particles{
 			//creates particles to replace removed ones
 			if (this.particles.length < this.noParticles){
 				for (let j=this.particles.length; j<this.noParticles; j++){
-					this.particles[j] = new Particle(this.width/2,this.height/2,this.graphic);
+					this.particles[j] = new Particle(this.width/2,this.height/2,this.graphic,this.red,this.green,this.blue);
 					this.particles[j].move();
 				}
 			}
