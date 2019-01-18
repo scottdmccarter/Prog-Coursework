@@ -5,7 +5,7 @@ class Particles{
 		this.noParticles = noParticles || 500;
 		this.width = width || 500;
 		this.height = height || 500;
-		this.graphic = graphic;
+		this.graphic = graphic || false;
 		this.red = red;
 		this.green = green;
 		this.blue = blue;
@@ -23,7 +23,7 @@ class Particles{
 			blendMode(ADD);
 		}
 
-		frameRate(60);
+		frameRate(45);
 		//generates particles from the Particle class - the number is determined by the noParticles parameter
 		for (let i=0; i<this.noParticles; i++){
 			this.particles[i] = new Particle(this.width/2,this.height/2,this.graphic,this.red,this.green,this.blue);
@@ -66,8 +66,8 @@ class Particles{
 //class used to generate each individual particle
 class Particle{
 	constructor(x_pos, y_pos,graphic, red, green, blue){
-		this.x_pos = x_pos;
-		this.y_pos = y_pos;
+		this.x_pos = x_pos || 250;
+		this.y_pos = y_pos || 250;
 		this.dx = random(-5, 5);
 		this.dy = random(-5, 5);
 		//rgb colours taken as argument or directly from html sliders
