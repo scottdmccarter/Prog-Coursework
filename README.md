@@ -58,6 +58,6 @@ The original code for this pieces can be found at: https://www.openprocessing.or
 <br/>See LICENSE.md for license information.
 
 ### Notable changes from original
-* Introduced second Particle class within Particles component, which could itself be reused if desired.
+* Introduced second Particle class within Particles component, which could itself be reused if desired
 * Rather than translating particles back to centre, particles which go offscreen are deleted from the particles array and new ones are generated in their place - allowing for easier recolouring of particles
 * Introduced optional 3D rendering of component onto 3D box
