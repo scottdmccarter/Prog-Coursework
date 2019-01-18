@@ -4,7 +4,7 @@ Usage:
 Particles(width, height, noParticles, graphic, red, green, blue)
 ```
 ## Description
-A class to generate a graphical particle effect which can be rendered either on a 2D canvas or a 3D cube*. This class within it another class, Particle, used to generate each of the individual particles. The red, green and blue arguments in the Particles class are passed directly through to the Particle class, allowing the colour to be set when calling Particle.
+A class to generate a graphical particle effect which can be rendered either on a 2D canvas or a 3D cube*. This class within it another class, Particle, used to generate each of the individual particles. The red, green and blue arguments in the Particles class are passed directly through to the Particle class, allowing the particle colour to be set.
 
 _\*Due to absence of the blendMode() function in WEBGL rendering, the effect has a slightly different appearance when rendered in WEBGL._
 ## Parameters and Methods
@@ -40,10 +40,10 @@ _\*Can be given as arguments when calling the class:_
 * #### constructor()
   constructor method to create and initialise objects created from class - defines all parameters listed above
 * #### init()
-  Generates canvas (or graphic)
+  Generates canvas (or graphic) and fills the particles array with instances of Particle objects
 
 * #### draw()
-  text
+  Draws particles onto canvas/graphic and keeps the number of particles at a constant value (defined by noParticles parameter)
 
 ## Example
 Below (and included in this repository) is an example of a usage of the class. For this, the class has been adapted to accept the RGB values directly from the html sliders allowing for dynamic changes.
@@ -53,5 +53,11 @@ Below (and included in this repository) is an example of a usage of the class. F
 
 
 ## Original Code
+### Source
 The original code for this pieces can be found at: https://www.openprocessing.org/sketch/633781#
 <br/>See LICENSE.md for license information.
+
+### Notable changes from original
+* Introduced second Particle class within Particles component, which could itself be reused if desired.
+* Rather than translating particles back to centre, particles which go offscreen are deleted from the particles array and new ones are generated in their place - allowing for easier recolouring of particles
+* Introduced optional 3D rendering of component onto 3D box
