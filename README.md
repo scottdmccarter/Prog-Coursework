@@ -25,14 +25,14 @@ _\*Due to absence of the blendMode() function in WEBGL rendering, the effect has
 * #### particles:
   Object array containing all instances of the Particle class
 
-* #### red:
+* #### red:*
   R value for RGB particle colour
 
-* #### green:
+* #### green:*
   G value for RGB particle colour
 
-* #### blue:
-  G value for RGB particle colour
+* #### blue:*
+  B value for RGB particle colour
 
 _\*Can be given as arguments when calling the class:_
 ### Methods
@@ -43,10 +43,10 @@ _\*Can be given as arguments when calling the class:_
   Generates canvas (or graphic) and fills the particles array with instances of Particle objects
 
 * #### draw()
-  Draws particles onto canvas/graphic and keeps the number of particles at a constant value (defined by noParticles parameter)
+  Draws particles array onto canvas/graphic and keeps the number of particles at a constant value (determined by noParticles parameter)
 
 ## Example
-Below (and included in this repository) is an example of a usage of the class. For this, the class has been adapted to accept the RGB values directly from the html sliders allowing for dynamic changes.
+Below is an image of the attached html example of the class being used. The class will accept the RGB values directly from the html sliders allowing for dynamic changes in particle colour.
 
 
 <img src="example.png" alt="example image" width="300"/>
@@ -59,5 +59,5 @@ The original code for this pieces can be found at: https://www.openprocessing.or
 
 ### Notable changes from original
 * Introduced second Particle class within Particles component, which could itself be reused if desired
-* Rather than translating particles back to centre, particles which go offscreen are deleted from the particles array and new ones are generated in their place - allowing for easier recolouring of particles
+* Rather than translating particles back to centre, particles which go offscreen are deleted from the particles array and new ones are generated in their place - allowing for easier dynamic recolouring of particles
 * Introduced optional 3D rendering of component onto 3D box
